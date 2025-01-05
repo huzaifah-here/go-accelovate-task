@@ -1,15 +1,8 @@
 import { dbConnect } from "@/app/lib/db";
+import Task from "@/app/models/Task";
 import mongoose from "mongoose";
 
 // Define Task schema with additional fields
-const taskSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  description: { type: String, required: true },
-  priority: { type: String, enum: ["low", "medium", "high"], required: true },
-  date: { type: Date, required: true },
-});
-
-const Task = mongoose.models.Task || mongoose.model("Task", taskSchema);
 
 // GET all tasks
 export async function GET(request) {
