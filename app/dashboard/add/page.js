@@ -58,15 +58,15 @@ export default function AddTask() {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-6 border rounded-lg shadow-md">
-      <h1 className="text-2xl font-semibold mb-4">Add New Task</h1>
+    <div className="max-w-lg mx-auto p-8 bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 rounded-xl shadow-lg">
+      <h1 className="text-2xl font-semibold text-white mb-4">Add New Task</h1>
       {error && <p className="text-red-500 mb-4">{error}</p>}
 
       <form onSubmit={handleSubmit}>
-        <div className="mb-4">
+        <div className="mb-6">
           <label
             htmlFor="name"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-white"
           >
             Task Name
           </label>
@@ -76,15 +76,15 @@ export default function AddTask() {
             name="name"
             value={task.name}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md text-black"
+            className="w-full p-3 border border-gray-300 rounded-md text-black"
             placeholder="Enter task name"
           />
         </div>
 
-        <div className="mb-4">
+        <div className="mb-6">
           <label
             htmlFor="description"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-white"
           >
             Description
           </label>
@@ -93,15 +93,15 @@ export default function AddTask() {
             name="description"
             value={task.description}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md text-black"
+            className="w-full p-3 border border-gray-300 rounded-md text-black"
             placeholder="Enter task description"
           />
         </div>
 
-        <div className="mb-4">
+        <div className="mb-6">
           <label
             htmlFor="priority"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-white"
           >
             Priority
           </label>
@@ -110,7 +110,7 @@ export default function AddTask() {
             name="priority"
             value={task.priority}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md text-black"
+            className="w-full p-3 border border-gray-300 rounded-md text-black"
           >
             <option value="low">Low</option>
             <option value="medium">Medium</option>
@@ -118,10 +118,10 @@ export default function AddTask() {
           </select>
         </div>
 
-        <div className="mb-4">
+        <div className="mb-6">
           <label
             htmlFor="date"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-white"
           >
             Due Date
           </label>
@@ -131,13 +131,14 @@ export default function AddTask() {
             name="date"
             value={task.date}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md text-black"
+            className="w-full p-3 border border-gray-300 rounded-md text-black"
           />
         </div>
+
         <div className="flex justify-end items-center">
           <button
             type="submit"
-            className="bg-white text-black px-4 py-2 rounded-md hover:bg-opacity-80 "
+            className="bg-white text-black px-6 py-3 rounded-md hover:bg-opacity-80 transition duration-300"
             disabled={loading}
           >
             {loading ? (
